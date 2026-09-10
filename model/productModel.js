@@ -10,5 +10,5 @@ const productSchema = new mongoose.Schema({
     image: {type: String, required: true},
 }, {timestamps: true});
 
-const productModel = mongoose.model("Produt", productSchema);
+const productModel = mongoose.model("Product", productSchema);
 module.exports = productModel;

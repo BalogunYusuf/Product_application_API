@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");//mongoose is an ODM used to communicate with mongoDB.So we can connect to the server and perform CRUD operations on the database.
 const userRoute = require("./routes/userRoutes");
+const productRoute = require("./routes/productRoutes");
 
 const compass_string = "mongodb://localhost:27017/cohort8_db"
 const atlas_string = "mongodb+srv://kickoffdiscussions_db_user:kickoffdiscussions_db_user@cluster0.jcufcbi.mongodb.net/cohort8_db?appName=Cluster0"
@@ -21,6 +22,8 @@ app.get('/', (req, res) => {
 });
 
 app.use("/users", userRoute);
+
+app.use("/products", productRoute)
 
 app.listen(port, () => {
     console.log(`Server is up and running on port: ${port}`);
