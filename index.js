@@ -1,10 +1,13 @@
+//import "dotenv/config"
+require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");//mongoose is an ODM used to communicate with mongoDB.So we can connect to the server and perform CRUD operations on the database.
 const userRoute = require("./routes/userRoutes");
 const productRoute = require("./routes/productRoutes");
 
-const compass_string = "mongodb://localhost:27017/cohort8_db"
-const atlas_string = "mongodb+srv://kickoffdiscussions_db_user:kickoffdiscussions_db_user@cluster0.jcufcbi.mongodb.net/cohort8_db?appName=Cluster0"
+const compass_string = process.env.COMPASS_STRING
+const atlas_string = process.env.ATLAS_STRING
 
 
 mongoose.connect(atlas_string) //this is the connection string to connect to the local mongoDB server. The database name is cohort8_db. If the database does not exist, it will be created automatically when we insert data into it.

@@ -3,9 +3,9 @@ const cloudinary = require('cloudinary').v2;
 //import {v2 as cloudinary} from "cloudinary" mjs format
 
 cloudinary.config({
-    cloud_name : "doopzrzep",
-    api_key : "643554471177346",
-    api_secret : "cNT0uQrQefNT-SkU8T_8HSLY-Ow"
+    cloud_name : process.env.CLOUD_NAME,
+    api_key : process.env.API_KEY,
+    api_secret : process.env.API_SECRET
 })
 
 module.exports = cloudinary;
