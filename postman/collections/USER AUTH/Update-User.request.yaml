@@ -1,4 +1,0 @@
-$kind: http-request
-url: localhost:5555/users/update-user
-method: PATCH
-order: 5000
